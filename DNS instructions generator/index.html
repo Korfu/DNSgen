@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>DNS instructions generator</title>
+        <link href="styles/main.css" type="text/css" rel="stylesheet"> 
+        <script src ="scripts/jquery.js" type="text/javascript"></script>
+    </head>
+    <body>
+      <form id="myForm">
+        <fieldset>
+        <legend><div id="legenda">DNS instructions</div></legend>
+        <div id="tabelka"><table id="DataTable">
+          <tr>
+            <td><label for="firstName">First name:</label></td>
+            <td><input type="text" id="firstName" name="firstName" placeholder="Tom"/></td>
+          </tr>
+          <tr>
+            <td><label for="domainName">Domain name:</label></td>
+            <td><input type="text" id="domainName" placeholder="sending_domain.com" size="30"/></td>
+          </tr>
+           <tr>
+             <td><label for="maskingDomain">Link masking domain:</label></td>
+            <td><input type="text" id="maskingDomain" placeholder="secondary_domain.com" size="30"/></td>
+          </tr>
+           <tr>
+             <td><label for="firstIP">First IP:</label></td>
+            <td><input type="text" id="firstIP" name="IP1" placeholder="148.124.35.10"/></td>
+          </tr>
+          <tr>
+            <td><label for="secondIP">Second IP:</label></td>
+            <td><input type="text" id="secondIP" placeholder="148.124.35.11"/></td>
+          </tr>
+          <tr>
+            <td><label for="thirdIP">Third IP:</label></td>
+            <td><input type="text" id="thirdIP" placeholder="148.124.35.12"/></td>
+          </tr>
+           <tr>
+            <td><label for="fourthIP">Fourth IP:</label></td>
+            <td><input type="text" id="fourthIP" placeholder="148.124.35.13"/></td>
+          </tr>
+          <tr>
+            <td><label for="spftag">Spf tag:</label></td>
+            <td><input type="text" id="spftag" placeholder="es-spf.pl"></td>
+          </tr>
+          <tr>
+            <td><label for="service_id">Service:</label></td>
+            <td><input type="range" id="service_id" name="service_nr" min="1" max="5" oninput="OutputId.value=service_id.value" />
+          <output name="service_nr" id="OutputId">3</output></td>
+          </tr>
+          <tr>
+            <td>Country:</td>
+            <td><input type="radio"  name="country" value="us" />US
+                <input type="radio"  name="country" value="china"/>China
+                <input type="radio"  name="country" value="brazil"/>Brasil 
+                <input type="radio"  name="country" value="russia"/>Russia
+                <input type="radio"  name="country" value="other" checked/>Other
+                <input type="radio"  name="country" value="b2b"/>B2B
+            </td>
+          </tr>
+          <tr>
+            <td><label for="sitever">google-site-verification:</label></td>
+            <td><input id="sitever" type="text" size="60" placeholder="google-site-verification=tcA_qbKh_ZfwsXFFcRwRwE..."/></td>
+          </tr>
+           <tr>
+             <td><label for="dkim">DKIM:</label></td>
+            <td><input id="dkim" type="text" size="60" placeholder="k=rsa;p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNAD...."></td>
+          </tr>
+        </table></div>
+      </fieldset>
+        <script src="scripts/main.js" type="text/javascript"></script>
+        <button type="button" accesskey="s" value="Generate Instructions" size="60" onclick="check();">Generate Instructions</button>       
+      </form><br/>
+ 
+      <div id="result"></div>    
+      <!--<script type="text/javascript">
+    function check() {
+      
+      var first_name = document.forms[0].elements[1].value;            
+      var main_domain= document.forms[0].elements[2].value;
+      var link_domian= document.forms[0].elements[3].value;
+      var first_IP= document.forms[0].elements[4].value;
+      var second_IP= document.forms[0].elements[5].value;
+      var third_IP= document.forms[0].elements[6].value;
+      var fourth_IP= document.forms[0].elements[7].value;
+      var spf_tag= document.forms[0].elements[8].value;
+      //var service= document.forms[0].elements[8].value;
+      //var country= document.forms[0].elements[9].value;
+      var google_site_verification=document.forms[0].elements[17].value;
+      var dkim=document.forms[0].elements[18].value;  
+      debugger;
+      $('result').html = "123";
+      document.getElementById("result").innerHTML = "<div>Domain records setup instructions for "+main_domain+"<br>"+"<br>"+
+      
+      "Hello "+first_name+"<br>"+"<br>"+
+      
+      "At ExpertSender we put the reputation ownership in your hands. This means you will need to configure the DNS records of your sending and <span class='purple'>link masking ("+link_domian+")</span> domains at your domain hosting company."+"<br>"+"<br>"+
+      
+      "The setup requires a little bit of work with adjusting the domain records"+"<br>"+"but shouldn't take more than 10 minutes, even for a non-technical person."+"<br>"+"<br>"+
+      "Please follow these instructions, including IQ mail server."+"<br>"+"Every DNS record should be checked at http://www.dnswatch.info/"+"<br>"+"<br>"+
+      
+      " <span class='red'>A) Domain records setup</span>"+"<br>"+
+      "<span class='bold'>A records (bounce, Feedback Loop and dedicated IP setup):</span>"+"<br>"+
+      "new A record for e."+main_domain+" pointing to: "+first_IP+"<br>"+
+      "new A record for f."+main_domain+" pointing to: "+first_IP+"<br>"+
+      "new A record for"+" "+"ip1."+main_domain+" pointing to:"+" "+first_IP+"<br>"+
+      "new A record for"+" "+"ip2."+main_domain+" pointing to:"+" "+second_IP+"<br>"+
+      "new A record for"+" "+"ip3."+main_domain+" pointing to:"+" "+third_IP+"<br>"+
+      "new A record for"+" "+"ip4."+main_domain+" pointing to:"+" "+fourth_IP+
+      
+      "<br>"+"<br>"+"<span class='bold'>CNAME records (mail server login panel and link masking setup):</span>"+"<br>"+
+      "new CNAME record for mail."+main_domain+" pointing to: roundcube.iq.pl"+"<br>"+
+      "new CNAME record for <span class='purple'>links."+link_domian+"</span> pointing to: click-s"+document.forms[0].elements["OutputId"].value+"-"+document.forms[0].elements["country"].value+".esv2.com."+"<br>"+"<br>"+
+      
+      "<span class='bold'>MX records (mail server, bounce and Feedback Loop setup):</span>"+"<br>"+
+      "new MX record (priority 5) for "+main_domain+" pointing to: mail.iq.pl"+"<br>"+
+      "new MX record (priority 1) for "+main_domain+" pointing to: mx1.iq.pl"+"<br>"+
+      "new MX record for e."+main_domain+" pointing to: e."+main_domain+"<br>"+
+      "new MX record for f."+main_domain+" pointing to: f."+main_domain+"<br>"+"<br>"+
+      
+      "<span class='bold'>TXT records (SPF, Postmaster Tools and DKIM setup):</span>"+"<br>"+
+      "new TXT record for e."+main_domain+" pointing to: v=spf1 include:"+spf_tag+" -all"+"<br>"+
+      "new TXT record for "+main_domain+" pointing to: v=spf1 mx a ip4:86.111.240.0/21 include:"+spf_tag+" -all"+"<br>"+
+      "new TXT record for "+main_domain+" pointing to: "+google_site_verification+"<br>"+
+      "new TXT record for default1k._domainkey."+main_domain+" pointing to: "+dkim+"<br>"+"<br>"+
+
+      "<span class='red'>B) Time zone selection</span>"+"<br>"+
+      "Choose the time zone for the Unit. Use the following format: UTC +/- x (e.g. UTC -4)."+"<br>"+
+      "<span class='bold'>IMPORTANT!</span> Unit's time zone cannot be changed after the setup."+"<br>"+"<br>"+
+
+      "<span class='red'>C) ISP volume share</span>"+"<br>"+
+      "Specify up to 10 domains representing the highest share of email addresses of your email database."+"<br>"+
+      "This will help us create the corresponding domain families to be used in segments and reporting."+"<br>"+"<br>"+
+
+      "<span class='red'>D) Questionnaire for FBL/whitelisting/future unblock procedures</span>"+"<br>"+
+      "<span class='bold'>1.</span> What is the full company name and postal address?"+"<br>"+
+      "<span class='bold'>2.</span> What is the contact phone number? (ISPs never call it)"+"<br>"+
+      "<span class='bold'>3.</span> What is the company website URL?"+"<br>"+
+      "<span class='bold'>4.</span> What is the website at which subscribers sign up? (please describe, if other means of opt-in are used)"+"<br>"+
+      "<span class='bold'>5.</span> What is the link to the Privacy Policy?"+"<br>"+
+      "<span class='bold'>6.</span> How would you describe the business that will involve sending emails from your business unit? (please be creative)"+"<br>"+
+      "<span class='bold'>7.</span> What physical address will be used in the footer of the email messages? (requirement for many email laws around the world, e.g. CAN-SPAM in US)"+"<br>"+
+      "<span class='bold'>8.</span> What is the database type? (own, managed, other*)"+"<br>"+
+      "<span class='bold'>9.</span> What is the database permission level? (double opt-in, confirmed opt-in, single opt-in, co-registration, opt-out, other*)"+"<br>"+
+      "*please describe"+"<br>"+"<br>"+
+
+      "In case of any doubts do not hesitate to ask.</div>";
+      
+      return false;
+}
+</script>-->
+      <script src="scripts/my_jquery.js" type="text/javascript"></script>
+      <script src="scripts/main.js" type="text/javascript"></script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+form  { display: table;      }
+p     { display: table-row;  }
+label { display: table-cell; }
+input { display: table-cell; }
+h1 {color:darkcyan; }
+p1 {color:darkblue;}
+body {background-color:aliceblue}
+.red { color:red; font-weight: 600; }
+#result { background-color: white}
+.bold { font-weight: 600;}
+.purple {font-weight: 400; color:mediumpurple;}
