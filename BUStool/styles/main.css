@@ -1,0 +1,87 @@
+form  { display: table; color: #27292E     }
+p     { display: table-row;vertical-align: top;  }
+label { display: table-cell; }
+input { display: table-cell; }
+h1 {color:darkcyan; }
+p1 {color:darkblue;}
+body {background-color:white}
+.red { color:red; font-weight: 600; }
+#result { background-color: white}
+.bold { font-weight: 600;}
+.purple {font-weight: 400; color:mediumpurple;}
+button {font-stretch: expanded}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #00a4c5;
+}
+a {
+    color: #00a4c5;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+.bg-es {
+    background-color: #FFFFFF !important;
+}
+
+.table td {
+  padding: 0.25rem;
+  vertical-align: top;
+  border-top: 1.5px solid #dee2e6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #00a4c5;
+    border-color: #00a4c5;
+}
+
+#result {display: none;
+         border: 5px solid ;
+         border-color: #00a4c5;
+         padding-left: 10px;
+  
+}
+.text-info {
+    color: #00a4c5 !important;
+    font-weight: 600;
+    text-shadow:2px 2px 00a4c5; 
+}
+.row_width {
+  width: 30px;
+}
+
+.table-nonfluid {
+   width: 30% !important;
+}
+
+pt, h5 { font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 15px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;}
+
+thead {  
+  text-align: left;  
+  background-color: #000000;
+  color:#ffffff;
+  display:table-row-group;
+ }
+
+.table{
+ /*border-collapse: separate !important;*/
+  text-align: left;
+ box-sizing: border-box;
+ border:1px solid #cecece !important;
+    -moz-border:1px solid #cecece !important;
+}
+.table th,
+.table td {
+  padding: 0.15rem;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}

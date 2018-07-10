@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta charset="utf-8">
+        <title>Transfer Message</title>
+        <link href="bootstrap-4.0.0-dist/css/bootstrap.css" rel="stylesheet">
+        <link href="styles/main.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+
+      <div class="container-fluid">
+          <nav class="navbar-left bg-light">          
+              <ul class="nav nav-pills">
+                <li ><a class="navbar-brand  " href="FAQ.html">BUStool</a></li>
+                <li><a class="nav-link nav-item " href="index.html">DNS instructions</a></li>
+                <li><a  class="nav-link nav-item active" href="Transfer.html">Transfer message</a></li>
+                <li><a  class="btn nav-link nav-item " href="Multiple.html">DNS verification</a></li>
+                <li><a  class="btn nav-link nav-item" href="Warmup.html">Warm-up</a></li>
+              </ul>
+            </nav>
+      </div>
+      
+      <div class="container-fluid">
+      <form id="myForm" class="" method="post" enctype="text/plain">
+          <div class="form-group row">
+            <label for="firstName" class="col-sm-3 col-form-label">First name:</label>
+             <div class="col-sm-9">
+              <input type="text" class="form-control" id="firstName" name="firstName" placeholder="John"/>
+             </div>
+          </div>
+          
+          <div class="form-group row">
+            <label for="clients_email"  class="col-sm-3 col-form-label">email:</label>
+             <div class="col-sm-9">
+              <input type="email" id="clients_email" name="IP1" placeholder="john.smith@example.com" class="form-control"/>
+             </div>
+          </div>
+  
+          <div class="form-group row">
+            <label for="domainName" class="col-sm-3 col-form-label">Domain name:</label>
+             <div class="col-sm-9">
+              <input type="text" class="form-control" id="domainName" placeholder="sending_domain.com"/>
+             </div>
+          </div>
+            
+            
+          <div class="form-group row" >
+            <label for="temp_password" class="col-sm-3 col-form-label">ExS password:</label>
+             <div class="col-sm-9">
+              <input type="text" size="60" id="temp_password" placeholder="***********" class="form-control"/>
+             </div>
+          </div>
+        
+          <div class="form-group row">
+            <label for="iqpass" class="col-sm-3 col-form-label">IQ pass:</label>
+             <div class="col-sm-9">
+              <input type="text" id="iqpass" placeholder="clientfirstandlastname1" class="form-control"/>
+             </div>
+          </div>
+        
+          <div class="form-group row">
+            <label for="service_id" class="col-sm-3 col-form-label">Service:</label>
+              <div class="col-sm-6">
+              <input type="range" id="service_id" name="service_nr" min="1" max="5" oninput="OutputId.value=service_id.value" class="form-control"/>
+              </div>
+              <div class="col-sm-3">
+              <output name="service_nr" id="OutputId" class="form-control">3</output>
+              </div>
+          </div>
+        
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Country:</label>
+              <div class="form-group col-sm-9">
+            <select class="form-control" id="tr_country">
+                  <option value=PL>Poland</option>
+                  <option value=US>United States</option>
+                  <option value=UK>United Kingdom</option>    
+                  <option value=FR>France</option>
+                  <option value=RU>Russia</option>
+                  <option value=IT>Italy</option>
+                  <option value=CH>China</option>
+                  <option value=DE>Germany</option>
+                  <option value=CZ>Czech Republic</option>
+                  <option value=IN>INTERNATIONAL</option>
+                </select>
+              </div>
+              
+          </div>
+    
+       <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Business type:</label>
+              <div class="form-group col-sm-9">
+              <select class="form-control" id="tr_bustype">
+                  <option value=A_>Affiliate</option>
+                  <option value=E_>E-commerce</option>
+                </select>
+              </div>
+          </div>
+          
+
+        <div class="form-group row">
+          <div class="col">
+          <button class="btn-primary form-control" type="button"  id="tr_en_transfer" onclick="transfer();">[EN] Transfer message</button></div>
+          <div class="col">
+          <button class="btn-primary form-control"  type="button" id="tr_pl_transfer"  onclick="polish_transfer();">[PL] transfer message</button>
+          </div>
+        
+          <!--<div class="col">
+          <a href="#" id="emailMYSELF" type="button" class="btn-warning form-control">
+            Email Template</a>
+          </div>-->
+          <!--<div class="col">
+          <button class="btn-success form-control" type="button" id="textsaver"  onclick="copyToClipboard('#result');">Copy result</button>
+          </div>-->
+          
+        </div>
+       </form>
+      </div>
+      
+      
+       <div name="result" id="result"></div>
+      <script src="scripts/jquery.js"></script>
+      <script src="scripts/my_jquery.js" type="text/javascript"></script>
+      <script src="scripts/main.js" type="text/javascript"></script>
+      <script src="bootstrap-4.0.0-dist/js/bootstrap.js"></script>
+  </body>
+</html>
