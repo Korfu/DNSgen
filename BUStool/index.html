@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta charset="utf-8">
+        <title>DNS instructions</title>
+        <script src="scripts/jquery.js"></script>
+        <script src="scripts/my_jquery.js"></script>
+        <link href="bootstrap-4.0.0-dist/css/bootstrap.css" rel="stylesheet">
+        <link href="styles/main.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+      
+      <div class="container-fluid">
+          <nav class="navbar-left bg-light">
+              
+              <ul class="nav nav-pills">
+                
+                <li ><a class="navbar-brand" href="FAQ.html">BUStool</a></li>
+                
+                <li><a class="nav-link nav-item active" href="index.html">DNS instructions</a></li>
+                <li><a  class="nav-link nav-item" href="Transfer.html">Transfer message</a></li>
+                <li><a  class="btn nav-link nav-item" href="Multiple.html">DNS verification</a></li>
+                <li><a  class="btn nav-link nav-item" href="Warmup.html">Warm-up</a></li>
+              </ul>
+            </nav>
+      </div>
+     
+      
+      <div class="container-fluid">
+      <form id="myForm" class="">
+          <div class="form-group row">
+            <label for="firstName" class="col-sm-3 col-form-label">First name:</label>
+             <div class="col-sm-9">
+              <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Tom"/>
+             </div>
+          </div>
+          <div class="form-group row">
+            <label for="domainName" class="col-sm-3 col-form-label">Domain name:</label>
+             <div class="col">
+              <input type="text" class="form-control" id="domainName" placeholder="sending_domain.com"/>
+             </div>
+          </div>
+          <div class="form-group row align-items-center">
+            <label for="maskingDomain" class="col-sm-3 col-form-label">Masking domain:
+              <!--<span class="badge badge-info"><i class="icon-info-sign icon-white">i</i></span>--></label>
+            
+             <div class="col-sm-9">
+              <input type="text" id="maskingDomain" placeholder="secondary_domain.com" class="form-control"/>
+             </div>
+          </div>
+          <div class="form-group row">
+            <label for="firstIP"  class="col-sm-3 col-form-label">First IP:</label>
+             <div class="col-sm-9">
+              <input type="text" id="firstIP" name="IP1" placeholder="148.124.35.10" class="form-control"/>
+             </div>
+          </div>
+          <div class="form-group row">
+            <label for="secondIP" class="col-sm-3 col-form-label">Second IP:</label>
+             <div class="col-sm-9">
+              <input type="text" id="secondIP" placeholder="148.124.35.11" class="form-control"/>
+             </div>
+          </div>
+          <div class="form-group row">
+            <label for="thirdIP" class="col-sm-3 col-form-label">Third IP:</label>
+             <div class="col-sm-9">
+              <input type="text" id="thirdIP" placeholder="148.124.35.12" class="form-control"/>
+             </div>
+          </div>
+          <div class="form-group row">
+            <label for="fourthIP" class="col-sm-3 col-form-label">Fourth IP:</label>
+             <div class="col-sm-9">
+             <input type="text" id="fourthIP" placeholder="148.124.35.13" class="form-control"/>
+             </div>
+          </div>
+          <div class="form-group row">
+            <label for="spftag" class="col-sm-3 col-form-label">Spf tag:</label>
+             <div class="col-sm-9">
+             <input type="text" id="spftag" placeholder="es-spf.pl" class="form-control">
+             </div>
+          </div>
+          <div class="form-group row">
+            <label for="service_id" class="col-sm-3 col-form-label">Service:</label>
+              <div class="col-sm-6">
+              <input type="range" id="service_id" name="service_nr" min="1" max="5" oninput="OutputId.value=service_id.value" class="form-control"/>
+              </div>
+              <div class="col-sm-3">
+              <output name="service_nr" id="OutputId" class="form-control">3</output>
+              </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-3 col-form-label">Country:</div>
+             <div class="col">
+             <label class="radio"><input type="radio"  name="country" value="us" class="form-control" align=right/>US</label>
+             </div>
+             <div class="col">
+               <label class="radio"><input type="radio"  name="country" value="china" class="form-control"/>China</label>
+            </div>
+            <div class="col">
+              <label class="radio"><input type="radio"  name="country" value="brazil" class="form-control"/>Brasil</label>
+            </div>
+            <div class="col">
+              <label class="radio"><input type="radio"  name="country" value="russia" class="form-control"/>Russia</label>
+            </div>
+            <div class="col">
+              <label class="radio"><input type="radio"  name="country" value="other" class="form-control" checked/>Other</label>
+            </div>
+            <div class="col">
+              <label class="radio"><input type="radio"  name="country" value="b2b" class="form-control"/>B2B</label>
+            </div>
+            </div>
+          
+          <div class="form-group row align-items-center">
+            <label for="sitever" class="col-sm-3 col-form-label">google-site-verification:</label>
+             <div class="col-sm-9">
+             <input id="sitever" type="text" size="60" placeholder="google-site-verification=tcA_qbKh_ZfwsXFFcRwRwE..." class="form-control"/>
+             </div>
+          </div>
+          <div class="form-group row">
+            <label for="dkim" class="col-sm-3 col-form-label">DKIM:</label>
+             <div class="col-sm-9">
+             <input id="dkim" type="text" size="60" placeholder="k=rsa;p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNAD...." class="form-control">
+             </div>
+          </div>
+         <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Mailbox type:</label>
+              <div class="form-group col-sm-9">
+              <select class="form-control" id="mailbox_type">
+                  <option value=IQ>IQ setup</option>
+                  <option value=Own>Own</option>
+                </select>
+              </div>
+          </div>
+      
+        <div class="form-group row ">
+        <div class="col">  
+        <button class="btn-primary form-control"  type="button"  id="dns_english_btn" onclick="">[EN] dedicated IPs </button>
+        </div>
+        <div class="col">  
+        <button class="btn-primary  form-control"  type="button" id="dns_dedicated_btn"   onclick="">[PL] dedicated IPs</button>
+        </div>
+        <div class="col">  
+        <button class="btn-primary  form-control"  type="button" id="dns_shared_btn"  onclick="">[PL] shared IPs</button>
+        </div>
+        <div class="col">
+        <button class="btn-primary  form-control" type="button"  id="dns_verification" onclick="">DNS verification</button>
+        </div>  
+        <!--<div class="col">
+        <button class="btn-success form-control" id="textsaver" type="button"  data-loading-text="Saving..." data-saved-text="Saved">Copy result</button></div>-->
+        </div>
+        
+
+        </form></div>
+        
+      <div name="result" id="result"></div>     
+      
+      <script src="scripts/jquery.js"></script>
+      <script src="bootstrap-4.0.0-dist/js/bootstrap.js"></script>
+      <script src="scripts/my_jquery.js" type="text/javascript"></script>     
+      <script src="scripts/main.js" type="text/javascript"></script> 
+  </body>
+</html>
